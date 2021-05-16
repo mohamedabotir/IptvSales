@@ -1,0 +1,25 @@
+﻿@model IptvSales.Models.ListViewPlans
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>test</title>
+</head>
+<body>
+    <div>
+        
+        <h1>Sub set of Data</h1>
+        @foreach (var item in Model.plans)
+        {
+            <p>@item.description</p>
+            <p>@item.name</p>
+        }
+        
+    </div>
+</body>
+</html>

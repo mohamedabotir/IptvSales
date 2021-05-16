@@ -1,0 +1,14 @@
+###Requirements
+##user
+can choose numebr of plans at least one and paid will be (using paypall)
+has cart can check status for each plan weather expired or still online 
+and number of people being used
+##Admin
+-Create plan each plan has advantages and plan may be used by more than one
+by using plan code and cost of multi plan will be more than single
+-and delete plan if no one in such plan but can remove it from site only
+-can modify plan but this modification didn't affect previous subscribed
+
+----------------------------
+plan 
+id,name,price,description,imagemime,imagetype,usedTime,shareNumber 
