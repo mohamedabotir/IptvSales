@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.1300
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IptvSales", "IptvSales\IptvSales.csproj", "{CA161376-5C5D-4BD6-98A8-F57281AB532E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iptv.Domain", "Iptv.Domain\Iptv.Domain.csproj", "{F790723D-1CA8-492F-AC1A-764220D03FA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iptv.Domain", "Iptv.Domain\Iptv.Domain.csproj", "{F790723D-1CA8-492F-AC1A-764220D03FA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F790723D-1CA8-492F-AC1A-764220D03FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F790723D-1CA8-492F-AC1A-764220D03FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F790723D-1CA8-492F-AC1A-764220D03FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

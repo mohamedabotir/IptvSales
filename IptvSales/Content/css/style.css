@@ -230,15 +230,16 @@ img {
 	margin-bottom:30px;
 }
 .productbox h1 {
-	display:block;
-	font-size:17px;
-	text-transform:uppercase;
-	margin-top:15px;
-	border-bottom:double medium #eee;
-	padding-bottom:15px;
-	margin-bottom:10px;
-	font-weight:500;
-	color:#333;
+    display: block;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    border-bottom: double medium #eee;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+    height: 200px;
 }
 .product-details {
 	padding:6px 0 0 0;

@@ -18,10 +18,11 @@ namespace IptvSales.Controllers
         // GET: Home
         public ViewResult Index()
         {
-            ListViewPlans p = new ListViewPlans
+           /* ListViewPlans p = new ListViewPlans
             {
-                plans = planRepo.planes
-            };
+                plans = planRepo.planes.OrderByDescending(e => e.id).Take(3)
+            };*/
+            IEnumerable<Plan> p = planRepo.planes.OrderByDescending(e => e.id).Take(3);
             return View(p);
         }
         public ViewResult test() {
