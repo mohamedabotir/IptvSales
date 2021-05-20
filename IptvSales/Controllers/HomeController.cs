@@ -18,11 +18,13 @@ namespace IptvSales.Controllers
         // GET: Home
         public ViewResult Index()
         {
-           /* ListViewPlans p = new ListViewPlans
-            {
-                plans = planRepo.planes.OrderByDescending(e => e.id).Take(3)
-            };*/
-            IEnumerable<Plan> p = planRepo.planes.OrderByDescending(e => e.id).Take(3);
+             ListViewPlans p = new ListViewPlans
+             {
+                 plans = planRepo.planes.OrderByDescending(e => e.id).Take(3)
+             };
+            ViewBag.MainTitle = "Buy Iptv Service for All Area";
+            ViewBag.SubTitle = " 24/7 Support";
+            //IEnumerable<Plan> p = planRepo.planes.OrderByDescending(e => e.id).Take(3);
             return View(p);
         }
         public ViewResult test() {

@@ -12,7 +12,13 @@ namespace IptvSales
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+                "plan",
+                "plans/{action}",
+                new {
+                    controller = "Plan",action = "index"
+                }
+                );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
