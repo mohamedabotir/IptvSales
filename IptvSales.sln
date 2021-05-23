@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iptv.Domain", "Iptv.Domain\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IptvSaless", "IptvSaless\IptvSaless.csproj", "{8B791142-178D-4516-9870-0C0EC5D174CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3B7981A-E6C9-4F9D-92F3-0ACB125D553A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B791142-178D-4516-9870-0C0EC5D174CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B791142-178D-4516-9870-0C0EC5D174CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B791142-178D-4516-9870-0C0EC5D174CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B791142-178D-4516-9870-0C0EC5D174CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
