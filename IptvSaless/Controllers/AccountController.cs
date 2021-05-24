@@ -156,7 +156,7 @@ namespace IptvSaless.Controllers
             if (ModelState.IsValid)
             {
                
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,HomeTown = model.HomeTown, BirthDate = model.BirthDate};
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email,HomeTown = model.HomeTown, BirthDate = model.BirthDate};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 
                 if (result.Succeeded)
@@ -373,7 +373,7 @@ namespace IptvSaless.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,BirthDate = model.BirthDate ,HomeTown = model.HomeTown };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email,BirthDate = model.BirthDate ,HomeTown = model.HomeTown };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

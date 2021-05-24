@@ -7,6 +7,10 @@ namespace IptvSaless.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Username")]
+        public string UserName { set; get; }
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -87,14 +91,17 @@ namespace IptvSaless.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
         [Required]
-        [Display(Name ="HomeTown")]
+        [Display(Name = "HomeTown")]
         public string HomeTown { get; set; }
         [Required]
         [DataType(DataType.DateTime)]
         [Display(Name = "BirthDate")]
         public System.DateTime? BirthDate { get; set; }
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Username")]
+        public string UserName { set; get; }
     }
-
     public class ResetPasswordViewModel
     {
         [Required]
