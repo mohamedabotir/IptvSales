@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using IptvSaless.Models;
+using Iptv.Domain.Abstract;
+using Iptv.Domain.Entities;
 
 namespace IptvSaless.Controllers
 {
@@ -15,9 +17,10 @@ namespace IptvSaless.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
-        public ManageController()
+        IPlanRepository planRepository;
+        public ManageController(IPlanRepository planRepository)
         {
+            this.planRepository = planRepository;
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -385,5 +388,34 @@ namespace IptvSaless.Controllers
         }
 
 #endregion
+        [Authorize(Roles = "admin")]
+        public ActionResult edit(){
+            return View();
+        }
+        [Authorize(Roles = "admin")]
+        [HttpGet]
+        public ActionResult add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult add(Plan data,HttpPostedFileBase image)
+        {
+            if (image != null)
+            {
+                data.ImageMimeType = image.ContentType;
+                data.ImageData = new byte[image.ContentLength];
+                image.InputStream.Read(data.ImageData,0,image.ContentLength);
+            }
+            planRepository.savePlan(data);
+            TempData["success"] = "Add Successfully";
+            return View("add");
+        }
+        public ActionResult remove(int id)
+        {
+            planRepository.remove(id);
+            return RedirectToAction("List","Plan","default");
+        }
+
     }
 }

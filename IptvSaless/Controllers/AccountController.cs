@@ -377,6 +377,7 @@ namespace IptvSaless.Controllers
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+                    var addtoGroup = await UserManager.AddToRoleAsync(user.Id, "user");
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {

@@ -14,6 +14,15 @@ namespace Iptv.Domain.Concrete
         public IQueryable<Plan> planes {
             get { return dbContext.plans; } }
 
+        public void remove(int id)
+        {
+            Plan dataPlan = dbContext.plans.Find(id);
+            if (dataPlan != null) {
+                dbContext.plans.Remove(dataPlan);
+                dbContext.SaveChanges();
+                    }
+        }
+
         public void savePlan(Plan plan)
         {
             if (plan.id == 0) {// if new plan
@@ -21,8 +30,17 @@ namespace Iptv.Domain.Concrete
             }
             else
             {
-
+                //update
+                Plan dataplan = dbContext.plans.Find(plan.id);
+                dataplan.name = plan.name;
+                dataplan.price = plan.price;
+                dataplan.sharedNumebr = plan.sharedNumebr;
+                dataplan.usedTime = plan.usedTime;
+                dataplan.ImageData = plan.ImageData;
+                dataplan.ImageMimeType = plan.ImageMimeType;
+                
             }
+            dbContext.SaveChanges();
         }
     }
 }

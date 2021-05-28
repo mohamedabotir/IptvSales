@@ -1,4 +1,5 @@
 ﻿using Iptv.Domain.Abstract;
+using Iptv.Domain.Entities;
 using IptvSaless.Models;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,22 @@ namespace IptvSales.Controllers
                 plans = planRepo.planes
             };
             return View(p);
+        }
+        public FileContentResult GetImage(int id) {
+            Plan data = planRepo.planes.FirstOrDefault(e=>e.id == id);
+            if (data != null) {
+                return File(data.ImageData,data.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public ActionResult List() {
+            ListViewPlans listViewPlans = new ListViewPlans {
+                plans = planRepo.planes.OrderBy(e => e.id)
+            };
+            return View(listViewPlans);
         }
     }
 }

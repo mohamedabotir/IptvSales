@@ -55,8 +55,8 @@ namespace IptvSaless
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "746165672731371",
-               appSecret: "b8f2b521ffded4554c6332377869e5fe");
+               appId: "386714329283663",
+               appSecret: "8bb46a14d0355a697d5e77237d853349");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

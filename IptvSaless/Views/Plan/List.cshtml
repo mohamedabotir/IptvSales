@@ -1,0 +1,75 @@
+﻿@model IptvSaless.Models.ListViewPlans
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<div class="row items-list">
+    <div class="col-lg-7 mx-auto">
+        <div class="card border-0 shadow">
+            <div class="card-body p-5">
+
+                <!-- Responsive table -->
+                <div class="table-responsive">
+                    <table class="table m-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">share</th>
+                                <th scope="col">quotes</th>
+
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ int index = 0;}
+                            @foreach (var item in Model.plans)
+                            {
+                                index++;
+
+                                <tr>
+                                    <th scope="row">@index</th>
+                                    <td>@item.name</td>
+                                    <td>@item.price</td>
+                                    <td>@item.sharedNumebr</td>
+                                    <td>@item.usedTime</td>
+                                    <td>
+                                        <!-- Call to action buttons -->
+                                        <ul class="list-inline m-0">
+                                            <a href="/manage/add" style="display:inline-block">
+                                                <li class="list-inline-item">
+                                                    <button class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-table"></i></button>
+
+                                                </li>
+                                            </a>
+                                            <a href="/manage/edit/@item.id" style="display:inline-block">
+                                                <li class="list-inline-item">
+                                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                                                </li>
+                                            </a>
+                                            <a href="/manage/remove/@item.id" style="display:inline-block">
+
+                                                <li class="list-inline-item">
+                                                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                                                </li>
+                                                </a>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>

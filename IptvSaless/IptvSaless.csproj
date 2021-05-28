@@ -286,6 +286,9 @@
     <Content Include="Views\Home\1index.cshtml" />
     <Content Include="Views\Home\test.cshtml" />
     <Content Include="Views\Plan\Index.cshtml" />
+    <Content Include="Views\Manage\1add.cshtml" />
+    <Content Include="Views\Manage\add.cshtml" />
+    <Content Include="Views\Plan\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

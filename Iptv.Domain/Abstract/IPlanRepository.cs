@@ -11,5 +11,6 @@ namespace Iptv.Domain.Abstract
     {
         IQueryable<Plan> planes { get; }
         void savePlan(Plan plan);
+        void remove(int id);
     }
 }
