@@ -27,16 +27,19 @@ namespace IptvSales.Controllers
             };
             return View(p);
         }
-        public FileContentResult GetImage(int id) {
-            Plan data = planRepo.planes.FirstOrDefault(e=>e.id == id);
-            if (data != null) {
-                return File(data.ImageData,data.ImageMimeType);
+        public FileContentResult GetImage(int id)
+        {
+            Plan data = planRepo.planes.FirstOrDefault(e => e.id == id);
+            if (data != null)
+            {
+                return File(data.ImageData, data.ImageMimeType);
             }
             else
             {
                 return null;
             }
         }
+        [Authorize(Roles = "admin")]
         public ActionResult List() {
             ListViewPlans listViewPlans = new ListViewPlans {
                 plans = planRepo.planes.OrderBy(e => e.id)

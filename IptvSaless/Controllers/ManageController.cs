@@ -388,10 +388,8 @@ namespace IptvSaless.Controllers
         }
 
 #endregion
-        [Authorize(Roles = "admin")]
-        public ActionResult edit(){
-            return View();
-        }
+        
+       
         [Authorize(Roles = "admin")]
         [HttpGet]
         public ActionResult add()
@@ -411,11 +409,26 @@ namespace IptvSaless.Controllers
             TempData["success"] = "Add Successfully";
             return View("add");
         }
+        [Authorize(Roles = "admin")]
         public ActionResult remove(int id)
         {
             planRepository.remove(id);
             return RedirectToAction("List","Plan","default");
         }
-
+        [Authorize(Roles = "admin")]
+        public ActionResult Modify(int id) {
+            Plan data = planRepository.planes.FirstOrDefault(e => e.id == id);
+            return View(data);
+        }[HttpPost]
+        public ActionResult Modify(Plan data,HttpPostedFileBase image)
+        {
+            if (image != null) {
+                data.ImageMimeType = image.ContentType;
+                data.ImageData = new byte[image.ContentLength];
+                image.InputStream.Read(data.ImageData, 0, image.ContentLength);
+            }
+            planRepository.savePlan(data);
+            return RedirectToAction("List","plan","default");
+        }
     }
 }

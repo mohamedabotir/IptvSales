@@ -289,6 +289,8 @@
     <Content Include="Views\Manage\1add.cshtml" />
     <Content Include="Views\Manage\add.cshtml" />
     <Content Include="Views\Plan\List.cshtml" />
+    <Content Include="Views\Manage\edi1t.cshtml" />
+    <Content Include="Views\Manage\Modify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -216,7 +216,7 @@ img {
 }
 /*Product Box*/
 .maxproduct {
-	max-height:300px;
+	max-height:200px;
 	overflow:hidden;
 	display:inline-block;
 }
@@ -239,7 +239,7 @@ img {
     margin-bottom: 10px;
     font-weight: 500;
     color: #333;
-    height: 200px;
+   
 }
 .product-details {
 	padding:6px 0 0 0;
