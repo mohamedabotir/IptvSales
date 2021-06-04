@@ -1,0 +1,49 @@
+﻿@model Iptv.Domain.Entities.Plan
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <!-- CONTENT =============================-->
+    <section class="item content">
+        <div class="container toparea">
+            <div class="underlined-title">
+                <div class="editContent">
+                    <h1 class="text-center latestitems">@Model.name</h1>
+                </div>
+                <div class="wow-hr type_short">
+                    <span class="wow-hr-h">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="productbox">
+                        <img src="@Url.Action("GetImage","Plan", new { Model.id })">
+                        <div class="clearfix">
+                        </div>
+                        <br />
+                        <div class="product-details text-left">
+                            <p>
+                             @Model.description
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="btn btn-buynow">@Model.price.ToString("c") - Purchase</a>
+                    <div class="properties-box">
+                        <ul class="unstyle">
+                            <li><b class="propertyname">Plan:</b>@Model.name</li>
+                            <li><b class="propertyname">Price:</b>@Model.price</li>
+                            <li><b class="propertyname">SharedNumber:</b> @Model.sharedNumebr</li>
+                            <li><b class="propertyname">UsedTime:</b>@Model.usedTime</li>
+                     
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

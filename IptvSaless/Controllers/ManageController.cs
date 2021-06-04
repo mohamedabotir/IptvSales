@@ -18,9 +18,11 @@ namespace IptvSaless.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         IPlanRepository planRepository;
-        public ManageController(IPlanRepository planRepository)
+        IBalanceRepository balanceRepository;
+        public ManageController(IPlanRepository planRepository, IBalanceRepository balanceRepository)
         {
             this.planRepository = planRepository;
+            this.balanceRepository = balanceRepository;
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -429,6 +431,10 @@ namespace IptvSaless.Controllers
             }
             planRepository.savePlan(data);
             return RedirectToAction("List","plan","default");
+        }
+        public ContentResult conten() {
+            balanceRepository.setBalance(new Balance {id =  User.Identity.GetUserId(),balance = 50 });
+            return Content("No Problem"+ User.Identity.GetUserId());
         }
     }
 }

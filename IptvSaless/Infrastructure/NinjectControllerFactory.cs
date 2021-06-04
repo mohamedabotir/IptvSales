@@ -22,7 +22,7 @@ namespace IptvSaless.Infrastructure
         private void addBinding()
         {
             kernal.Bind<IPlanRepository>().To<EFdbRepository>();
-         
+            kernal.Bind<IBalanceRepository>().To<EFdbRepository>();
         }
     }
 }

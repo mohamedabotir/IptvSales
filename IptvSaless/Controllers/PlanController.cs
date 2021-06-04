@@ -46,5 +46,9 @@ namespace IptvSales.Controllers
             };
             return View(listViewPlans);
         }
+        public ActionResult Details(int id) {
+            Plan planData = planRepo.planes.FirstOrDefault(e => e.id == id);
+            return View(planData);
+        }
     }
 }

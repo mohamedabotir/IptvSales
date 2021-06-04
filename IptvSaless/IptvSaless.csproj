@@ -291,6 +291,7 @@
     <Content Include="Views\Plan\List.cshtml" />
     <Content Include="Views\Manage\edi1t.cshtml" />
     <Content Include="Views\Manage\Modify.cshtml" />
+    <Content Include="Views\Plan\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace Iptv.Domain.Concrete
 {
-  public class EFdbRepository : IPlanRepository
+  public class EFdbRepository : IPlanRepository,IBalanceRepository
     {
        private EFdbContext dbContext = new EFdbContext();
         public IQueryable<Plan> planes {
             get { return dbContext.plans; } }
+
+        public IQueryable<Balance> balances {
+            get { return dbContext.balances; } }
 
         public void remove(int id)
         {
@@ -39,6 +42,22 @@ namespace Iptv.Domain.Concrete
                 dataplan.ImageData = plan.ImageData;
                 dataplan.ImageMimeType = plan.ImageMimeType;
                 
+            }
+            dbContext.SaveChanges();
+        }
+
+        public void setBalance(Balance balance)
+        {
+            Balance accountBalacne;
+            if (balance.id !=null) {
+                accountBalacne = dbContext.balances.Find(balance.id);
+                if (accountBalacne != null)
+                    return;
+                dbContext.balances.Add(balance);
+            }
+            else
+            {
+
             }
             dbContext.SaveChanges();
         }

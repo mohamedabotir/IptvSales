@@ -36,10 +36,10 @@
                                     <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
                                 </p>
                             </div>
-                            <span class="maxproduct"><img src="@Url.Action("GetImage","Plan", new { item.id })"></span>
+                            <span class="maxproduct"><img src="@Url.Action("GetImage", "Plan", new { item.id })"></span>
                         </div>
                         <div class="product-details">
-                            <a href="/">
+                            <a href="@Url.Action("Details", "Plan",new {id = item.id })">
                                 <h1> @item.name</h1>
                             </a>
                             <span class="price">

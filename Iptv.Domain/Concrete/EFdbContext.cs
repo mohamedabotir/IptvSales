@@ -11,5 +11,6 @@ namespace Iptv.Domain.Concrete
     class EFdbContext :DbContext
     {
        public DbSet<Plan> plans { set; get; }
+       public DbSet<Balance> balances { set; get; }
     }
 }
