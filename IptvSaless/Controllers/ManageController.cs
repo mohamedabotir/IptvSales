@@ -69,6 +69,12 @@ namespace IptvSaless.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            Balance balance = new Balance();
+
+
+            balance = balanceRepository.balances.FirstOrDefault(e => e.id == userId);
+
+            ViewBag.AccountBalance = balance.balance ;
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
