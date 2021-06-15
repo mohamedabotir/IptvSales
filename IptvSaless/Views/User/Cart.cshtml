@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Iptv.Domain.Entities.Cart>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Plan</th>
+            <th scope="col">Description</th>
+            <th scope="col">UsedTime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{int index = 0;}
+        @foreach (var item in Model)
+        {
+            ++index;
+        <tr>
+            <th scope="row">@index</th>
+            <td>@item.plan.name</td>
+            <td>@item.plan.description</td>
+            <td>@item.usedTime</td>
+        </tr>
+        }
+         
+        
+    </tbody>
+</table>

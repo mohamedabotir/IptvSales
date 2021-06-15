@@ -170,16 +170,28 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Binders\CartModelBinder.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlanController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Migrations\202106132102258_initialCart.cs" />
+    <Compile Include="Migrations\202106132102258_initialCart.Designer.cs">
+      <DependentUpon>202106132102258_initialCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106132152282_rebuild.cs" />
+    <Compile Include="Migrations\202106132152282_rebuild.Designer.cs">
+      <DependentUpon>202106132152282_rebuild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CartListView.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ListViewPlans.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -292,6 +304,7 @@
     <Content Include="Views\Manage\edi1t.cshtml" />
     <Content Include="Views\Manage\Modify.cshtml" />
     <Content Include="Views\Plan\Details.cshtml" />
+    <Content Include="Views\User\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -318,6 +331,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106132102258_initialCart.resx">
+      <DependentUpon>202106132102258_initialCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106132152282_rebuild.resx">
+      <DependentUpon>202106132152282_rebuild.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

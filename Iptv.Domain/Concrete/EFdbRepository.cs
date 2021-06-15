@@ -1,34 +1,49 @@
 ﻿using Iptv.Domain.Abstract;
 using Iptv.Domain.Entities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Iptv.Domain.Concrete
 {
-  public class EFdbRepository : IPlanRepository,IBalanceRepository
+    public class EFdbRepository : IPlanRepository, IBalanceRepository, ICartRepository
     {
-       private EFdbContext dbContext = new EFdbContext();
-        public IQueryable<Plan> planes {
-            get { return dbContext.plans; } }
+        private EFdbContext dbContext = new EFdbContext();
+        public IQueryable<Plan> planes
+        {
+            get { return dbContext.plans; }
+        }
 
-        public IQueryable<Balance> balances {
-            get { return dbContext.balances; } }
+        public IQueryable<Balance> balances
+        {
+            get { return dbContext.balances; }
+        }
+
+        public IQueryable<Cart> carts
+        {
+            get { return dbContext.carts; }
+        }
+
+
+        public void add(Cart data)
+        {
+
+            dbContext.carts.Add(data);
+
+        }
 
         public void remove(int id)
         {
             Plan dataPlan = dbContext.plans.Find(id);
-            if (dataPlan != null) {
+            if (dataPlan != null)
+            {
                 dbContext.plans.Remove(dataPlan);
                 dbContext.SaveChanges();
-                    }
+            }
         }
 
         public void savePlan(Plan plan)
         {
-            if (plan.id == 0) {// if new plan
+            if (plan.id == 0)
+            {// if new plan
                 dbContext.plans.Add(plan);
             }
             else
@@ -41,7 +56,7 @@ namespace Iptv.Domain.Concrete
                 dataplan.usedTime = plan.usedTime;
                 dataplan.ImageData = plan.ImageData;
                 dataplan.ImageMimeType = plan.ImageMimeType;
-                
+
             }
             dbContext.SaveChanges();
         }
@@ -49,7 +64,8 @@ namespace Iptv.Domain.Concrete
         public void setBalance(Balance balance)
         {
             Balance accountBalacne;
-            if (balance.id !=null) {
+            if (balance.id != null)
+            {
                 accountBalacne = dbContext.balances.Find(balance.id);
                 if (accountBalacne != null)
                     return;
